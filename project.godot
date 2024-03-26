@@ -13,7 +13,7 @@ config_version=5
 config/name="Fate Engine"
 run/main_scene="res://RockLand.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
 
 [dotnet]
 

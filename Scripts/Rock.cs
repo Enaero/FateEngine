@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using FateEngine;
+using Fate;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,6 +13,9 @@ public partial class Rock : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Logger.SetErrorFunc(s => { GD.PushError(s); GD.PrintErr(s); });
+		Logger.SetPrintFunc(GD.Print);
+
 		_fateComponent = new FateComponent
 		{
 			Aspects = AspectsCatalogue.INSTANCE.GetAspects(AspectNames)
