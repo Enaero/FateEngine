@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dbwvr8c2pki2g"]
+
+[node name="CombatScene" type="Node3D"]
+
+[node name="GuiRoot" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CommandTypes" type="TabBar" parent="GuiRoot"]
+layout_mode = 2
+anchor_top = 0.82
+anchor_right = 0.455
+anchor_bottom = 0.869
+offset_top = -4.36005
+offset_right = -0.160034
+offset_bottom = -1.112
+tab_count = 4
+tab_0/title = "Attack"
+tab_1/title = "Create an Advantage"
+tab_2/title = "Defend"
+tab_2/disabled = true
+tab_3/title = "Overcome an Obstacle"
+tab_3/disabled = true
+
+[node name="AvailableCommands" type="ItemList" parent="GuiRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.869
+anchor_right = 0.455
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -5.112
+offset_right = -0.160034
+offset_bottom = -2.0
+max_columns = 3
+fixed_column_width = 162

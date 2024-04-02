@@ -8,7 +8,7 @@ public partial class Rock : Node
 {
 	[Export] public string[] AspectNames;
 
-	private FateComponent _fateComponent;
+	private FateEntity _fateComponent;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -16,14 +16,12 @@ public partial class Rock : Node
 		Logger.SetErrorFunc(s => { GD.PushError(s); GD.PrintErr(s); });
 		Logger.SetPrintFunc(GD.Print);
 
-		_fateComponent = new FateComponent
-		{
-			Aspects = AspectsCatalogue.INSTANCE.GetAspects(AspectNames)
-		};
+		_fateComponent = new FateEntity("Name", AspectsCatalogue.INSTANCE.GetAspects(AspectNames).ToArray());
 
-		_fateComponent.Aspects.ForEach(
-			aspect => GD.Print($"Loaded aspect: {aspect}")
-		);
+		foreach (Aspect aspect in _fateComponent.GetAllAspects())
+		{
+			Logger.INFO($"Loaded aspect: {aspect}");
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

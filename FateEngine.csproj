@@ -1,10 +1,9 @@
 <Project Sdk="Godot.NET.Sdk/4.1.3">
   <ItemGroup>
-    <ProjectReference Include="..\FateLibrary\Fate.csproj" />
+    <ProjectReference Include="..\FateLibrary\FateLibrary.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>FateEngine</RootNamespace>
   </PropertyGroup>
 </Project>

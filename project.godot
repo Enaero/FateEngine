@@ -10,14 +10,15 @@ config_version=5
 
 [application]
 
-config/name="Fate Engine"
+config/name="FateEngine"
 run/main_scene="res://RockLand.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 boot_splash/show_image=false
+config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Fate Engine"
+project/assembly_name="FateEngine"
 
 [rendering]
 
