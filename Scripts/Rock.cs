@@ -4,17 +4,17 @@ using Fate;
 using System.Collections.Generic;
 using System.Linq;
 
-public partial class Rock : Node
+public partial class Rock : PostSceneLoadNode
 {
 	[Export] public string[] AspectNames;
 
 	private FateEntity _fateComponent;
 
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public override async void _Ready()
 	{
-		Logger.SetErrorFunc(s => { GD.PushError(s); GD.PrintErr(s); });
-		Logger.SetPrintFunc(GD.Print);
+		base._Ready();
+		await _SceneLoadTask;
 
 		_fateComponent = new FateEntity("Name", AspectsCatalogue.INSTANCE.GetAspects(AspectNames).ToArray());
 
