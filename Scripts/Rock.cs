@@ -18,7 +18,7 @@ public partial class Rock : PostSceneLoadNode
 
 		_fateComponent = new FateEntity("Name", AspectsCatalogue.INSTANCE.GetAspects(AspectNames).ToArray());
 
-		foreach (Aspect aspect in _fateComponent.GetAllAspects())
+		foreach (Aspect aspect in _fateComponent.Aspects)
 		{
 			Logger.INFO($"Loaded aspect: {aspect}");
 		}

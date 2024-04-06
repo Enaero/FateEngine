@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbwvr8c2pki2g"]
+[gd_scene load_steps=5 format=3 uid="uid://dbwvr8c2pki2g"]
 
 [ext_resource type="Script" path="res://Scripts/SceneLoader.cs" id="1_avv1i"]
 [ext_resource type="Script" path="res://Scripts/Rock.cs" id="1_du6ft"]
+[ext_resource type="Script" path="res://Scripts/SceneSaver.cs" id="3_1kkdk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_x04k0"]
 
@@ -12,6 +13,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32298, 7.01867)
 
 [node name="GuiRoot" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -51,7 +53,7 @@ script = ExtResource("1_du6ft")
 AspectNames = PackedStringArray("Hard as a rock")
 SceneLoaderNode = NodePath("../SceneLoader")
 
-[node name="Larry2" type="MeshInstance3D" parent="."]
+[node name="Aiden" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.732804, 0, 0.680439, 0, 1, 0, -0.680439, 0, -0.732804, 3.23104, 0, 0.289989)
 mesh = SubResource("BoxMesh_x04k0")
 skeleton = NodePath("../Larry")
@@ -61,3 +63,6 @@ transform = Transform3D(-0.323216, -0.906469, 0.271745, 0.494486, 0.0830586, 0.8
 
 [node name="SceneLoader" type="Node" parent="."]
 script = ExtResource("1_avv1i")
+
+[node name="SceneSaver" type="Node" parent="."]
+script = ExtResource("3_1kkdk")
