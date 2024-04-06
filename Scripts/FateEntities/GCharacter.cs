@@ -11,14 +11,7 @@ public partial class GCharacter : PostSceneLoadNode
 	[Export]
 	public string CharacterName;
 
-	/// <summary>
-	/// A reference to the SceneLoader node to access loaded Fate objects.
-	/// </summary>
-	[Export]
-	public SceneLoader SceneLoaderRef;
-
-
-	public Character LoadedCharacter;
+	public Character FateCharacter;
 
 	// Called when the node enters the scene tree for the first time.
 	public override async void _Ready()
@@ -27,20 +20,21 @@ public partial class GCharacter : PostSceneLoadNode
 		{
 			throw new ArgumentException($"CharacterName is required for node[{Name}]");
 		}
-		if (SceneLoaderRef is null)
-		{
-			throw new ArgumentException($"SceneLoader reference is required for node[{Name}]");
-		}
 
 		base._Ready();
 		await _SceneLoadTask;
 
-		if (!SceneLoaderRef.LoadedFateIndex.Characters.TryGetValue(CharacterName, out LoadedCharacter))
+		SceneLoader sceneLoader = (SceneLoader) SceneLoaderNode;
+		if (!sceneLoader.LoadedFateIndex.Characters.TryGetValue(CharacterName, out FateCharacter))
 		{
-			throw new ArgumentException($"Could not get {CharacterName} from {SceneLoaderRef.Name}");
+			Logger.ERROR($"Could not get {CharacterName} from {SceneLoaderNode.Name}. Using default character.");
+			FateCharacter = new DependencyProvider().GetDefaultCharacter(CharacterName);
+		}
+		else
+		{
+			Logger.INFO($"Successfully loaded {CharacterName}");
 		}
 
-		Logger.INFO($"Successfully loaded {CharacterName}");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

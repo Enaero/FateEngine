@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 public partial class PostSceneLoadNode : Node
 {
 	[Export]
-	public SceneLoader SceneLoaderNode;
+	public Node SceneLoaderNode;
 
 	protected Task _SceneLoadTask;
 
@@ -19,10 +19,10 @@ public partial class PostSceneLoadNode : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	private async Task WaitForFateSceneToLoad()
 	{
-		if (SceneLoaderNode is null)
+		if (SceneLoaderNode is null || SceneLoaderNode is not SceneLoader)
 		{
-			GD.PushWarning($"SceneLoaderNode not set in {this}. Attempting to find default.");
-			SceneLoaderNode = (SceneLoader) NodeOps.FindNode<SceneLoader>(GetTree().Root);
+			GD.PushWarning($"SceneLoaderNode not set or valid in {Name}. Attempting to find default.");
+			SceneLoaderNode = NodeOps.FindNode<SceneLoader>(GetTree().Root);
 			if (SceneLoaderNode is null)
 			{
 				GD.PushError("Cannot find SceneLoader node. Please set it in editor");
