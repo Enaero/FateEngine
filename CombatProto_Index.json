@@ -1,5 +1,80 @@
 {
   "Characters": {
+	"Aiden": {
+	  "Skills": {
+		"Academics": {
+		  "Value": 0
+		},
+		"Athletics": {
+		  "Value": 0
+		},
+		"Burglary": {
+		  "Value": 0
+		},
+		"Contacts": {
+		  "Value": 0
+		},
+		"Crafts": {
+		  "Value": 0
+		},
+		"Deceive": {
+		  "Value": 0
+		},
+		"Drive": {
+		  "Value": 0
+		},
+		"Empathy": {
+		  "Value": 0
+		},
+		"Fight": {
+		  "Value": 0
+		},
+		"Investigate": {
+		  "Value": 0
+		},
+		"Lore": {
+		  "Value": 0
+		},
+		"Notice": {
+		  "Value": 0
+		},
+		"Physique": {
+		  "Value": 0
+		},
+		"Provoke": {
+		  "Value": 0
+		},
+		"Rapport": {
+		  "Value": 0
+		},
+		"Resources": {
+		  "Value": 0
+		},
+		"Shoot": {
+		  "Value": 0
+		},
+		"Stealth": {
+		  "Value": 0
+		},
+		"Will": {
+		  "Value": 0
+		}
+	  },
+	  "PhysicalStress": {
+		"Name": "Physical",
+		"Capacity": 3,
+		"Current": 0
+	  },
+	  "MentalStress": {
+		"Name": "Mental",
+		"Capacity": 3,
+		"Current": 0
+	  },
+	  "FatePoints": 3,
+	  "FateRefresh": 3,
+	  "Name": "Aiden",
+	  "Aspects": []
+	},
 	"Larry": {
 	  "Skills": {
 		"Academics": {

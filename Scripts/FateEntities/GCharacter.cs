@@ -25,10 +25,15 @@ public partial class GCharacter : PostSceneLoadNode
 		await _SceneLoadTask;
 
 		SceneLoader sceneLoader = (SceneLoader) SceneLoaderNode;
-		if (!sceneLoader.LoadedFateIndex.Characters.TryGetValue(CharacterName, out FateCharacter))
+
+		if (sceneLoader.LoadedFateIndex is null)
 		{
-			Logger.ERROR($"Could not get {CharacterName} from {SceneLoaderNode.Name}. Using default character.");
-			FateCharacter = new DependencyProvider().GetDefaultCharacter(CharacterName);
+			throw new ArgumentException(
+				$"LoadedFateIndex is null in SceneLoader node. Cannot laod character [{CharacterName}]");
+		}
+		else if (!sceneLoader.LoadedFateIndex.Characters.TryGetValue(CharacterName, out FateCharacter))
+		{
+			throw new ArgumentException($"Could not get {CharacterName} from {SceneLoaderNode.Name}.");
 		}
 		else
 		{
