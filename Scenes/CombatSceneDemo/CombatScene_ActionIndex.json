@@ -1,0 +1,28 @@
+{
+  "Attacks": {
+	"Basic Attack": {
+	  "Name": "Basic Attack",
+	  "SkillUsed": "Fight",
+	  "ValidDefenseNames": [
+		"Dodge",
+		"Block",
+		"Brace"
+	  ],
+	  "TargetStressName": "PhysicalStress"
+	}
+  },
+  "Defenses": {
+	"Block": {
+	  "Name": "Block",
+	  "SkillUsed": "Fight"
+	},
+	"Brace": {
+	  "Name": "Brace",
+	  "SkillUsed": "Physique"
+	},
+	"Dodge": {
+	  "Name": "Dodge",
+	  "SkillUsed": "Athletics"
+	}
+  }
+}

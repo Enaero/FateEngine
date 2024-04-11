@@ -1,0 +1,246 @@
+{
+  "Characters": {
+	"Larry": {
+	  "Skills": {
+		"Athletics": {
+		  "Name": "Athletics",
+		  "Value": 2
+		},
+		"Academics": {
+		  "Name": "Academics",
+		  "Value": 3
+		},
+		"Burglary": {
+		  "Name": "Burglary",
+		  "Value": 0
+		},
+		"Contacts": {
+		  "Name": "Contacts",
+		  "Value": 1
+		},
+		"Crafts": {
+		  "Name": "Crafts",
+		  "Value": 1
+		},
+		"Deceive": {
+		  "Name": "Deceive",
+		  "Value": 0
+		},
+		"Drive": {
+		  "Name": "Drive",
+		  "Value": 1
+		},
+		"Empathy": {
+		  "Name": "Empathy",
+		  "Value": 0
+		},
+		"Fight": {
+		  "Name": "Fight",
+		  "Value": 1
+		},
+		"Investigate": {
+		  "Name": "Investigate",
+		  "Value": 1
+		},
+		"Lore": {
+		  "Name": "Lore",
+		  "Value": 2
+		},
+		"Notice": {
+		  "Name": "Notice",
+		  "Value": 0
+		},
+		"Physique": {
+		  "Name": "Physique",
+		  "Value": 2
+		},
+		"Provoke": {
+		  "Name": "Provoke",
+		  "Value": 4
+		},
+		"Rapport": {
+		  "Name": "Rapport",
+		  "Value": 0
+		},
+		"Resources": {
+		  "Name": "Resources",
+		  "Value": 1
+		},
+		"Shoot": {
+		  "Name": "Shoot",
+		  "Value": 0
+		},
+		"Stealth": {
+		  "Name": "Stealth",
+		  "Value": 0
+		},
+		"Will": {
+		  "Name": "Will",
+		  "Value": 2
+		}
+	  },
+	  "PhysicalStress": {
+		"Name": "PhysicalStress",
+		"Capacity": 4,
+		"Current": 0
+	  },
+	  "MentalStress": {
+		"Name": "MentalStress",
+		"Capacity": 3,
+		"Current": 0
+	  },
+	  "FatePoints": 3,
+	  "FateRefresh": 3,
+	  "Attacks": [
+		"Basic Attack"
+	  ],
+	  "Defenses": [
+		"Block",
+		"Dodge",
+		"Brace"
+	  ],
+	  "Name": "Larry",
+	  "Aspects": [
+		{
+		  "Name": "Underachieving Office Drone with a Delinquent Past",
+		  "IsLimited": false,
+		  "NumLimitedInvokes": 0,
+		  "FreeInvokes": {}
+		},
+		{
+		  "Name": "Eager to Self-Sacrifice",
+		  "IsLimited": false,
+		  "NumLimitedInvokes": 0,
+		  "FreeInvokes": {}
+		},
+		{
+		  "Name": "My Wife is my EVERYTHING",
+		  "IsLimited": false,
+		  "NumLimitedInvokes": 0,
+		  "FreeInvokes": {}
+		}
+	  ]
+	},
+	"Aiden": {
+	  "Skills": {
+		"Athletics": {
+		  "Name": "Athletics",
+		  "Value": 4
+		},
+		"Academics": {
+		  "Name": "Academics",
+		  "Value": 2
+		},
+		"Burglary": {
+		  "Name": "Burglary",
+		  "Value": 0
+		},
+		"Contacts": {
+		  "Name": "Contacts",
+		  "Value": 2
+		},
+		"Crafts": {
+		  "Name": "Crafts",
+		  "Value": 0
+		},
+		"Deceive": {
+		  "Name": "Deceive",
+		  "Value": 0
+		},
+		"Drive": {
+		  "Name": "Drive",
+		  "Value": 2
+		},
+		"Empathy": {
+		  "Name": "Empathy",
+		  "Value": 3
+		},
+		"Fight": {
+		  "Name": "Fight",
+		  "Value": 3
+		},
+		"Investigate": {
+		  "Name": "Investigate",
+		  "Value": 1
+		},
+		"Lore": {
+		  "Name": "Lore",
+		  "Value": 1
+		},
+		"Notice": {
+		  "Name": "Notice",
+		  "Value": 2
+		},
+		"Physique": {
+		  "Name": "Physique",
+		  "Value": 2
+		},
+		"Provoke": {
+		  "Name": "Provoke",
+		  "Value": 0
+		},
+		"Rapport": {
+		  "Name": "Rapport",
+		  "Value": 2
+		},
+		"Resources": {
+		  "Name": "Resources",
+		  "Value": 0
+		},
+		"Shoot": {
+		  "Name": "Shoot",
+		  "Value": 0
+		},
+		"Stealth": {
+		  "Name": "Stealth",
+		  "Value": 2
+		},
+		"Will": {
+		  "Name": "Will",
+		  "Value": 2
+		}
+	  },
+	  "PhysicalStress": {
+		"Name": "PhysicalStress",
+		"Capacity": 3,
+		"Current": 0
+	  },
+	  "MentalStress": {
+		"Name": "MentalStress",
+		"Capacity": 4,
+		"Current": 0
+	  },
+	  "FatePoints": 3,
+	  "FateRefresh": 3,
+	  "Attacks": [
+		"Basic Attack"
+	  ],
+	  "Defenses": [
+		"Block",
+		"Dodge",
+		"Brace"
+	  ],
+	  "Name": "Aiden",
+	  "Aspects": [
+		{
+		  "Name": "Baseball Superstar with a Heart of Gold",
+		  "IsLimited": false,
+		  "NumLimitedInvokes": 0,
+		  "FreeInvokes": {}
+		},
+		{
+		  "Name": "Blackout Blitz",
+		  "IsLimited": false,
+		  "NumLimitedInvokes": 0,
+		  "FreeInvokes": {}
+		},
+		{
+		  "Name": "Mother always said \u0022Do the noble thing...\u0022",
+		  "IsLimited": false,
+		  "NumLimitedInvokes": 0,
+		  "FreeInvokes": {}
+		}
+	  ]
+	}
+  }
+}

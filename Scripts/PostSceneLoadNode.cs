@@ -30,7 +30,11 @@ public partial class PostSceneLoadNode : Node
 			}
 		}
 		GD.Print($"{Name} waiting for Fate Scene to load...");
-		await ToSignal(SceneLoaderNode, SceneLoader.SignalName.FateSceneLoaded);
+		SceneLoader sceneLoader = (SceneLoader) SceneLoaderNode;
+		if (!sceneLoader.isFinishedLoading)
+		{
+			await ToSignal(SceneLoaderNode, SceneLoader.SignalName.FateSceneLoaded);
+		}
 
 		GD.Print($"{Name} finished waiting for Fate Scene to load!");
 	}

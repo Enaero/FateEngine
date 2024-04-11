@@ -8,15 +8,23 @@ public partial class SceneSaver : Node
 	[Export]
 	public string SceneName;
 
+	/// <summary>
+	/// Output folder to store scene files, e.g. res://Scenes
+	/// </summary>
+	[Export]
+	public string OutputFolder;
+
 	private Fate.DependencyProvider _DependencyProvider;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		if (String.IsNullOrEmpty(SceneName))
+		if (String.IsNullOrEmpty(SceneName) || String.IsNullOrEmpty(OutputFolder))
 		{
-			throw new ArgumentException("SceneName needs to be defined for SceneSaver");
+			throw new ArgumentException("SceneName and Folder needs to be defined for SceneSaver");
 		}
+		OutputFolder = OutputFolder.TrimEnd('/');
+
 		_DependencyProvider = new Fate.DependencyProvider();
 
 		Button saveSceneButton = new()
@@ -55,12 +63,12 @@ public partial class SceneSaver : Node
 		}
 
 		string serializedScene = _SerializeObj(fateScene);
-		using FileAccess sceneFile = FileAccess.Open($"res://{SceneName}.json", FileAccess.ModeFlags.Write);
+		using FileAccess sceneFile = FileAccess.Open($"{OutputFolder}/{SceneName}.json", FileAccess.ModeFlags.Write);
 		sceneFile.StoreString(serializedScene);
 		Fate.Logger.INFO($"{sceneFile.GetPathAbsolute()} written to disk");
 
 		string serializedIndex = _SerializeObj(sceneIndex);
-		using FileAccess sceneIndexFile = FileAccess.Open($"res://{SceneName}_Index.json", FileAccess.ModeFlags.Write);
+		using FileAccess sceneIndexFile = FileAccess.Open($"{OutputFolder}/{SceneName}_Index.json", FileAccess.ModeFlags.Write);
 		sceneIndexFile.StoreString(serializedIndex);
 
 		Fate.Logger.INFO($"{sceneIndexFile.GetPathAbsolute()} written to disk");

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpem82rg6k7c0"]
-
-[ext_resource type="Script" path="res://Scripts/Rock.cs" id="1_xjddo"]
-
-[node name="RockLand" type="Node3D"]
-
-[node name="Rock" type="Node3D" parent="."]
-script = ExtResource("1_xjddo")
-AspectNames = PackedStringArray("Hard as a rock")

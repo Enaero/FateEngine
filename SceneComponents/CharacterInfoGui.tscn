@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://4u8hnn3rlog2"]
+
+[node name="CharacterInfoGui" type="Control"]
+layout_mode = 3
+anchor_right = 0.341
+anchor_bottom = 0.097
+offset_right = 0.167969
+offset_bottom = 0.143997
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.379
+anchor_bottom = 0.413
+offset_right = 0.0529938
+offset_bottom = -0.019001
+text = "Name"
+
+[node name="StressLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.567
+anchor_bottom = 1.333
+offset_top = 0.5
+offset_right = 0.168991
+offset_bottom = 0.0209961
+text = "Stress 🔘🔘⚫"

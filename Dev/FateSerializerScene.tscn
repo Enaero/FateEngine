@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cquwhqerxokrr"]
+
+[ext_resource type="Script" path="res://Dev/CreateCombatDemo.cs" id="1_2gtot"]
+
+[node name="FateSerializerScene" type="Node"]
+script = ExtResource("1_2gtot")

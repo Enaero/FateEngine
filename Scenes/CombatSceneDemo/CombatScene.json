@@ -1,0 +1,14 @@
+{
+  "Zones": [
+	{
+	  "Name": "MainZone",
+	  "Connections": {},
+	  "Entities": [
+		"Larry",
+		"Aiden"
+	  ]
+	}
+  ],
+  "Name": "CombatScene",
+  "Aspects": []
+}
