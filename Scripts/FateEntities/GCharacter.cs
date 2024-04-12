@@ -3,7 +3,7 @@ using Godot;
 using System;
 using System.Text.Json;
 
-public partial class GCharacter : PostSceneLoadNode
+public partial class GCharacter : Node
 {
 	/// <summary>
 	/// Name (id) of the character.
@@ -21,10 +21,8 @@ public partial class GCharacter : PostSceneLoadNode
 			throw new ArgumentException($"CharacterName is required for node[{Name}]");
 		}
 
-		base._Ready();
-		await _SceneLoadTask;
-
-		SceneLoader sceneLoader = (SceneLoader) SceneLoaderNode;
+		SceneLoader sceneLoader = GetTree().Root.FindChildByType<SceneLoader>();
+		await this.WaitForReady(sceneLoader);
 
 		if (sceneLoader.LoadedFateIndex is null)
 		{
@@ -33,7 +31,7 @@ public partial class GCharacter : PostSceneLoadNode
 		}
 		else if (!sceneLoader.LoadedFateIndex.Characters.TryGetValue(CharacterName, out FateCharacter))
 		{
-			throw new ArgumentException($"Could not get {CharacterName} from {SceneLoaderNode.Name}.");
+			throw new ArgumentException($"Could not get {CharacterName} from {sceneLoader.Name}.");
 		}
 		else
 		{
@@ -45,6 +43,7 @@ public partial class GCharacter : PostSceneLoadNode
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
+		
 	}
 	
 }

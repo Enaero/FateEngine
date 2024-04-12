@@ -10,6 +10,9 @@ public partial class CombatGui : Node
 	private const string ALLIED_INFO_NAME = "AlliedInfo";
 	private const string ENEMY_INFO_NAME = "EnemyInfo";
 
+	[Signal]
+	public delegate void AttackChosenEventHandler(string chosenAttack);
+
 	[Export]
 	public Node SceneLoaderNode;
 
@@ -46,6 +49,7 @@ public partial class CombatGui : Node
 
 		SelectedAlly = "";
 		_HideAlliedInfo();
+		_HideEnemyInfo();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,10 +77,12 @@ public partial class CombatGui : Node
 			if (Allies.Contains(name))
 			{
 				_ShowAllyInfo(name);
+				_HideEnemyInfo();
 			}
 			else if (Enemies.Contains(name))
 			{
 				_ShowEnemyInfo(name);
+				_HideAlliedInfo();
 			}
 		}
 	}

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Godot;
 
 public static class NodeOps 
@@ -37,11 +38,18 @@ public static class NodeOps
     }
 #nullable disable
 
-    public static Node FindNode<T>(Node root)
+#nullable enable
+    /// <summary>
+    /// Returns first child node that matches type.
+    /// </summary>
+    /// <typeparam name="T">A node type</typeparam>
+    /// <param name="root">The node to start searching from.</param>
+    /// <returns></returns>
+    public static T? FindChildByType<T>(this Node root) where T : Node
     {
-        if (root is T)
+        if (root is T rootT)
         {
-            return root;
+            return rootT;
         }
 
         List<Node> toSearch = root.GetChildren().ToList();
@@ -51,16 +59,16 @@ public static class NodeOps
             Node child = toSearch[^1];
             toSearch.RemoveAt(toSearch.Count - 1);
     
-            if (child is T)
+            if (child is T childT)
             {
-                return child;
+                return childT;
             }
             toSearch.AddRange(child.GetChildren());
         }
 
         return null;
     }
-    
+#nullable disable
 
 #nullable enable
     public static T? GetSelfOrParentByType<T>(this Node node) where T : Node
@@ -74,4 +82,16 @@ public static class NodeOps
         return candidate as T;
     }
 #nullable disable
+
+    public static async Task WaitForReady(this Node waitingNode, Node nodeToWaitFor)
+    {
+        if (nodeToWaitFor.IsNodeReady())
+        {
+            GD.Print($"{nodeToWaitFor.Name} is already ready for {waitingNode.Name}");
+            return;
+        }
+        GD.Print($"{waitingNode.Name} starting wait for {nodeToWaitFor.Name}");
+        await waitingNode.ToSignal(nodeToWaitFor, Node.SignalName.Ready);
+        GD.Print($"{waitingNode.Name} finished wating for {nodeToWaitFor.Name}");
+    }
 }
